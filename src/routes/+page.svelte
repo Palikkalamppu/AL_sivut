@@ -1,5 +1,5 @@
 <script>
-    import { base } form '$app/paths';
+    import { base } from '$app/paths';
 </script>
 
 <br>
