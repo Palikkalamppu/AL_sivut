@@ -1,0 +1,163 @@
+[
+  {
+    "id": 1,
+    "otsikko": "Harvinainen muki",
+    "hinta": 145,
+    "sijainti": "Helsinki, Töölö",
+    "kuva": "muki_1.jpg"
+  },
+  {
+    "id": 2,
+    "otsikko": "Muki (keräilyharvinaisuus)",
+    "hinta": 620,
+    "sijainti": "Tampere, Pyynikki",
+    "kuva": "muki_2.jpg"
+  },
+  {
+    "id": 3,
+    "otsikko": "Myydään harvinainen muki",
+    "hinta": 85,
+    "sijainti": "Turku, Martti",
+    "kuva": "muki_3.jpg"
+  },
+  {
+    "id": 4,
+    "otsikko": "Uudenveroinen muki tarralla",
+    "hinta": 310,
+    "sijainti": "Oulu, Karjasilta",
+    "kuva": "muki_4.jpg"
+  },
+  {
+    "id": 5,
+    "otsikko": "Muki, siistikuntoinen",
+    "hinta": 550,
+    "sijainti": "Jyväskylä, Kuokkala",
+    "kuva": "muki_5.jpg"
+  },
+  {
+    "id": 6,
+    "otsikko": "Harvinainen erikoismuki",
+    "hinta": 275,
+    "sijainti": "Kuopio, Puijo",
+    "kuva": "muki_6.jpg"
+  },
+  {
+    "id": 7,
+    "otsikko": "Muki - keräilijälle",
+    "hinta": 410,
+    "sijainti": "Lahti, Mukkula",
+    "kuva": "muki_7.jpg"
+  },
+  {
+    "id": 8,
+    "otsikko": "Vanha muki (harvinainen)",
+    "hinta": 199,
+    "sijainti": "Joensuu, Noljakka",
+    "kuva": "muki_8.jpg"
+  },
+  {
+    "id": 9,
+    "otsikko": "MUKI, täydellinen kunto",
+    "hinta": 680,
+    "sijainti": "Lappeenranta, Skinnarila",
+    "kuva": "muki_9.jpg"
+  },
+  {
+    "id": 10,
+    "otsikko": "Harvinainen muki, lue ilmoitus",
+    "hinta": 75,
+    "sijainti": "Pori, Yyteri",
+    "kuva": "muki_10.jpg"
+  },
+  {
+    "id": 11,
+    "otsikko": "Löytö! Harvinainen muki",
+    "hinta": 450,
+    "sijainti": "Vaasa, Palosaari",
+    "kuva": "muki_11.jpg"
+  },
+  {
+    "id": 12,
+    "otsikko": "Arvomuki kokoelmaan",
+    "hinta": 520,
+    "sijainti": "Seinäjoki, Törnävä",
+    "kuva": "muki_12.jpg"
+  },
+  {
+    "id": 13,
+    "otsikko": "Muki",
+    "hinta": 1450,
+    "sijainti": "Rovaniemi, Ounasvaara",
+    "kuva": "muki_13.jpg"
+  },
+  {
+    "id": 14,
+    "otsikko": "Upea ja harvinainen muki",
+    "hinta": 370,
+    "sijainti": "Mikkeli, Keskusta",
+    "kuva": "muki_14.jpg"
+  },
+  {
+    "id": 15,
+    "otsikko": "Muki (ei tuotannossa)",
+    "hinta": 290,
+    "sijainti": "Kotka, Karhula",
+    "kuva": "muki_15.jpg"
+  },
+  {
+    "id": 16,
+    "otsikko": "Hieno muki keräilyyn",
+    "hinta": 640,
+    "sijainti": "Salo, Halikko",
+    "kuva": "muki_16.jpg"
+  },
+  {
+    "id": 17,
+    "otsikko": "Virheetön harvinainen muki",
+    "hinta": 95,
+    "sijainti": "Porvoo, Vanha Porvoo",
+    "kuva": "muki_17.jpg"
+  },
+  {
+    "id": 18,
+    "otsikko": "Punainen muki",
+    "hinta": 505,
+    "sijainti": "Kokkola, Ykspihlaja",
+    "kuva": "muki_18.jpg"
+  },
+  {
+    "id": 19,
+    "otsikko": "Muki, uusi ja tarrallinen",
+    "hinta": 215,
+    "sijainti": "Kajaani, Lehtikangas",
+    "kuva": "muki_19.jpg"
+  },
+  {
+    "id": 20,
+    "otsikko": "Myydään muki, harvinainen",
+    "hinta": 110,
+    "sijainti": "Espoo, Tapiola",
+    "kuva": "muki_20.jpg"
+  },
+  {
+    "id": 21,
+    "otsikko": "Harvinainen muki nopeimmalle",
+    "hinta": 399,
+    "sijainti": "Vantaa, Tikkurila",
+    "kuva": "muki_21.jpg"
+  },
+  {
+    "id": 22,
+    "otsikko": "Muki (Harvinainen!)",
+    "hinta": 130,
+    "sijainti": "Hämeenlinna, Aulanko",
+    "kuva": "muki_22.jpg"
+  },
+  {
+    "id": 23,
+    "otsikko": "Muki",
+    "hinta": 250,
+    "sijainti": "Rauma, Vanha Rauma",
+    "kuva": "muki_23.jpg"
+  }
+]
