@@ -1,17 +1,17 @@
 [
   {
     "id": 1,
-    "otsikko": "Harvinainen muki",
-    "hinta": 290,
-    "sijainti": "Helsinki, Töölö",
-    "kuva": "muki_1.jpg"
-  },
-  {
-    "id": 2,
     "otsikko": "Muki",
     "hinta": 2170,
     "sijainti": "Tampere, Pyynikki",
     "kuva": "muki_2.jpg"
+  },
+  {
+    "id": 2,
+    "otsikko": "Harvinainen muki",
+    "hinta": 290,
+    "sijainti": "Helsinki, Töölö",
+    "kuva": "muki_1.jpg"
   },
   {
     "id": 3,
@@ -106,10 +106,10 @@
   },
   {
     "id": 16,
-    "otsikko": "Hieno muki keräilyyn",
-    "hinta": 640,
-    "sijainti": "Salo, Halikko",
-    "kuva": "muki_16.jpg"
+    "otsikko": "Muki",
+    "hinta": 2170,
+    "sijainti": "Tampere, Pyynikki",
+    "kuva": "muki_2.jpg"
   },
   {
     "id": 17,

@@ -20,18 +20,20 @@
 <main class="container">
     <div class="grid">
         {#each ilmoitukset as ilmoitus}
-            <article class="card">
-                <div class="image-container">
-                    <img src={ilmoitus.kuva} alt={ilmoitus.otsikko} loading="lazy" />
-                </div>
-                
-                <div class="card-content">
-                    <h2 class="title">{ilmoitus.otsikko}</h2>
-                    <p class="price">{ilmoitus.hinta} €</p>
-                    <!--<p class="location">{ilmoitus.sijainti}</p>-->
-                </div>
-            </article>
-        {/each}
+    <!-- Kääritään kortti a-tagiin, joka viittaa ilmoituksen ID:hen -->
+    <a href="{base}/tuotesivut/{ilmoitus.id}" class="card-link">
+        <article class="card">
+            <div class="image-container">
+                <img src={ilmoitus.kuva} alt={ilmoitus.otsikko} loading="lazy" />
+            </div>
+            
+            <div class="card-content">
+                <h2 class="title">{ilmoitus.otsikko}</h2>
+                <p class="price">{ilmoitus.hinta} €</p>
+            </div>
+        </article>
+    </a>
+{/each}
     </div>
 </main>
 
@@ -43,6 +45,12 @@
         background-color: #f8f9fa; /* Vaalea tausta koko sivulle */
         font-family: 'Rubik', sans-serif;
         color: #212529; /* Tumma leipäteksti */
+    }
+
+    .card-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
     }
 
     /* --- Yläpalkki (Navbar) --- */
