@@ -2,14 +2,14 @@
   {
     "id": 1,
     "otsikko": "Harvinainen muki",
-    "hinta": 145,
+    "hinta": 290,
     "sijainti": "Helsinki, Töölö",
     "kuva": "muki_1.jpg"
   },
   {
     "id": 2,
-    "otsikko": "Muki (keräilyharvinaisuus)",
-    "hinta": 620,
+    "otsikko": "Muki",
+    "hinta": 2170,
     "sijainti": "Tampere, Pyynikki",
     "kuva": "muki_2.jpg"
   },
@@ -85,7 +85,7 @@
   },
   {
     "id": 13,
-    "otsikko": "Muki",
+    "otsikko": "Muki (harvinaisuus)",
     "hinta": 1450,
     "sijainti": "Rovaniemi, Ounasvaara",
     "kuva": "muki_13.jpg"
@@ -100,7 +100,7 @@
   {
     "id": 15,
     "otsikko": "Muki (ei tuotannossa)",
-    "hinta": 290,
+    "hinta": 300,
     "sijainti": "Kotka, Karhula",
     "kuva": "muki_15.jpg"
   },

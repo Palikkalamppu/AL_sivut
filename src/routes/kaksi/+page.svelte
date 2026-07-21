@@ -3,7 +3,7 @@
     // Tuodaan ilmoitukset suoraan JSON-tiedostosta
     import ilmoitukset from '$lib/ilmoitukset.json';
 
-    const halututIdt = [13, 15];
+    const halututIdt = [1, 2];
 
     const naytettavatIlmoitukset = ilmoitukset.filter(ilmoitus => halututIdt.includes(ilmoitus.id));
 </script>
