@@ -1,4 +1,6 @@
 <script>
+	import { base } from '$app/paths';
+
 	let paakuva = "https://placehold.co/400x400/f0f4f8/1a1a1a?text=Punainen+Muki";
 	let pikkukuvat = [
 		"https://placehold.co/100x100/f0f4f8/1a1a1a?text=Sivuprofiili",
@@ -12,7 +14,7 @@
 		<div class="logo">
 			<span class="circle-left"></span>
 			<span class="circle-right"></span>
-			<a href="/">PARMIS</a>
+			<a href="{base}/">PARMIS</a>
 		</div>
 		<div class="header-actions">
 			<button class="icon-btn">

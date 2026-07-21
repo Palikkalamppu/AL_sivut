@@ -1,6 +1,7 @@
 <script>
     // Tuodaan ilmoitukset suoraan JSON-tiedostosta
     import ilmoitukset from '$lib/ilmoitukset.json';
+	import { base } from '$app/paths';
 
     const halututIdt = [13];
 
@@ -9,7 +10,7 @@
 
 <!-- Sivun yläpalkki -->
 <header class="navbar">
-    <div class="logo"><a href="/">IRTO</a></div>
+    <div class="logo"><a href="{base}/">IRTO</a></div>
     <div class="nav-icons">
         <!-- Värittömät SVG-ikonit -->
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
