@@ -1,14 +1,18 @@
+<script>
+    import { base } form '$app/paths';
+</script>
+
 <br>
-<a href="/many">MONTA ILMOITUSTA</a>
-<br>
-<br>
-<a href="/kaksi">KAKSI ILMOITUSTA</a>
-<br>
-<br>
-<a href="/yksi">YKSI ILMOITUS</a>
+<a href="{base}/many">MONTA ILMOITUSTA</a>
 <br>
 <br>
-<a href="/luo_ilmoitus">LUO ILMOITUS</a>
+<a href="{base}/kaksi">KAKSI ILMOITUSTA</a>
 <br>
 <br>
-<a href="/kauppa">KAUPPA</a>
+<a href="{base}/yksi">YKSI ILMOITUS</a>
+<br>
+<br>
+<a href="{base}/luo_ilmoitus">LUO ILMOITUS</a>
+<br>
+<br>
+<a href="{base}/kauppa">KAUPPA</a>
