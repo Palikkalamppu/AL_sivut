@@ -10,8 +10,7 @@ const config = {
 			strict: true
 		}),
 		paths: {
-			// Korvaa tämä tulevan Github-repositoriosi nimellä!
-			base: '/AL_sivut'
+			base: process.argv.includes('dev') ? '' : '/AL_sivut'
 		}
 	}
 };
