@@ -1,56 +1,25 @@
 <script>
     import { base } from '$app/paths';
-    import { onMount } from 'svelte';
 
     // Keskustelun tila
     let messages = [
-        { id: 1, sender: 'me', text: 'Moi, haluaisin ostaa tämän', time: '10:32' }
+        { id: 1, sender: 'me', text: 'Moi, haluaisin ostaa tän.', time: '10:32' }
     ];
     let newMessage = '';
 
-    // Pull-to-refresh tila
-    let startY = 0;
-    let pullDistance = 0;
+    // Tuplaklikkauksen lataustila
     let isRefreshing = false;
-    let chatContainer;
 
-    // Kosketustapahtumat vetopäivitystä varten
-    function handleTouchStart(e) {
-        // Sallitaan veto vain, kun ollaan sivun yläreunassa
-        if (window.scrollY === 0) {
-            startY = e.touches[0].clientY;
-        }
-    }
-
-    function handleTouchMove(e) {
-        if (startY > 0 && !isRefreshing) {
-            const currentY = e.touches[0].clientY;
-            const diff = currentY - startY;
-            
-            // Jos vedetään alaspäin
-            if (diff > 0) {
-                // Lisätään hieman vastusta (kerroin 0.4) ja rajoitetaan maksimipituutta
-                pullDistance = Math.min(diff * 0.4, 70); 
-            }
-        }
-    }
-
-    function handleTouchEnd() {
-        if (pullDistance > 50) {
-            // Laukaistaan päivitys, jos on vedetty tarpeeksi pitkälle
-            isRefreshing = true;
-            pullDistance = 50; // Jätetään ikoni näkyviin pyörimään
-            
-            // Simuloidaan datan latausta (1.5 sekuntia)
-            setTimeout(() => {
-                isRefreshing = false;
-                pullDistance = 0;
-            }, 1500);
-        } else {
-            // Palautetaan ylös, jos veto oli liian lyhyt
-            pullDistance = 0;
-        }
-        startY = 0;
+    // Käsittelee tuplaklikkauksen
+    function handleDoubleClick() {
+        if (isRefreshing) return; // Estetään uusi lataus, jos edellinen on kesken
+        
+        isRefreshing = true;
+        
+        // Simuloidaan datan latausta (1.5 sekuntia)
+        setTimeout(() => {
+            isRefreshing = false;
+        }, 1500);
     }
 
     function sendMessage() {
@@ -67,12 +36,6 @@
     }
 </script>
 
-<svelte:window 
-    on:touchstart={handleTouchStart} 
-    on:touchmove={handleTouchMove} 
-    on:touchend={handleTouchEnd} 
-/>
-
 <!-- Yläpalkki -->
 <header class="navbar">
     <div class="logo"><a href="{base}/">IRTO</a></div>
@@ -84,19 +47,17 @@
     </div>
 </header>
 
-<main class="chat-wrapper">
-    <!-- Pull-to-refresh indikaattori -->
-    <div 
-        class="refresh-indicator" 
-        style="transform: translateY({pullDistance}px); opacity: {pullDistance / 50};"
-    >
-        <svg class="{isRefreshing ? 'spinning' : ''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<!-- Pääsisältö, tuplaklikkaus liitetty tähän elementtiin -->
+<main class="chat-wrapper" on:dblclick={handleDoubleClick}>
+    <!-- Latausindikaattori -->
+    <div class="refresh-indicator {isRefreshing ? 'visible' : ''}">
+        <svg class="spinning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.59-9.5L21.5 8"></path>
         </svg>
     </div>
 
     <!-- Keskustelun ylätunniste (tuote + myyjä) -->
-    <div class="chat-header" style="transform: translateY({pullDistance}px);">
+    <div class="chat-header">
         <div class="item-thumb">
             <img src="{base}/muki_1.jpg" alt="Tuotekuva" />
         </div>
@@ -108,7 +69,7 @@
     </div>
 
     <!-- Viestit -->
-    <div class="chat-messages" style="transform: translateY({pullDistance}px);">
+    <div class="chat-messages">
         <div class="date-divider">Tänään</div>
         
         {#each messages as msg (msg.id)}
@@ -121,8 +82,8 @@
         {/each}
     </div>
 
-    <!-- Viestin kirjoitus -->
-    <div class="chat-input-area">
+    <!-- Viestin kirjoitus (click-tapahtuman estäminen propagationin vuoksi vapaaehtoista, tässä estetty ettei tuplaklikkaus inputissa triggaa päivitystä) -->
+    <div class="chat-input-area" on:dblclick|stopPropagation>
         <input 
             type="text" 
             placeholder="Kirjoita viesti..." 
@@ -198,15 +159,17 @@
         margin: 0 auto;
         display: flex;
         flex-direction: column;
-        height: calc(100vh - 71px); /* Vähennetään navbarin korkeus */
+        height: calc(100vh - 71px);
         position: relative;
         overflow: hidden;
+        /* Estää tekstin vahingollisen maalautumisen tuplaklikkauksella */
+        user-select: none; 
     }
 
-    /* Pull to refresh */
+    /* Tuplaklikkauksen latausindikaattori */
     .refresh-indicator {
         position: absolute;
-        top: -40px;
+        top: -50px;
         left: 0;
         right: 0;
         display: flex;
@@ -214,6 +177,14 @@
         align-items: center;
         z-index: 50;
         pointer-events: none;
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    /* Kun tila on aktiivinen, ikoni liukuu alas ja tulee näkyviin */
+    .refresh-indicator.visible {
+        top: 20px;
+        opacity: 1;
     }
 
     .refresh-indicator svg {
@@ -242,7 +213,6 @@
         background-color: #ffffff;
         border-bottom: 1px solid #e5e5e5;
         gap: 16px;
-        transition: transform 0.1s ease-out;
     }
 
     .item-thumb {
@@ -306,7 +276,8 @@
         display: flex;
         flex-direction: column;
         gap: 12px;
-        transition: transform 0.1s ease-out;
+        /* Sallitaan tekstin maalaaminen viestien sisällä */
+        user-select: text;
     }
 
     .date-divider {
@@ -382,6 +353,8 @@
         border-top: 1px solid #e5e5e5;
         gap: 12px;
         align-items: center;
+        /* Estetään ulkoalueen user-select: none vaikuttamasta tähän */
+        user-select: auto;
     }
 
     .chat-input-area input {
@@ -424,6 +397,6 @@
     .send-btn svg {
         width: 20px;
         height: 20px;
-        margin-right: 2px; /* Keskittää paperilennokin optisesti */
+        margin-right: 2px;
     }
 </style>
