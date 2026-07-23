@@ -16,3 +16,6 @@
 <br>
 <br>
 <a href="{base}/kauppa">KAUPPA</a>
+<br>
+<br>
+<a href="{base}/keskustelu">KESKUSTELU</a>
